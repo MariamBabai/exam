@@ -1,58 +1,60 @@
-h1
+const EMAIL = document.getElementById("emailName");
+const NAME= document.getElementById("nameName");
+const SURNAME= document.getElementById("surName");
+const PASSWORD = document.getElementById("passwordName");
+const CONTAINER = document.getElementById("container");
+const SBMTBUTTON = document.getElementById("sbmt");
+
+const users=[];
+
+//<form action = "">
+//<div className="Container" id="container">
+SBMTBUTTON.addEventListener('click', function newUser()
 {
-    margin: 4vw;
-    text-align: center;
-    font-family: "Comic Sans MS";
+    const user= new Form(EMAIL.value, NAME.value, SURNAME.value, PASSWORD.value);
+    user.emailForm();
+    users.push(user);
+    console.log('users Array: ');
+    console.log(users);
+    render();
+});
+
+function Form(email, name, surrname, password) {
+    this.email = email;
+    this.name = name;
+    this.surrname = surrname;
+    this.password = password;
 }
-body
+
+function render()
 {
-    background-color: aquamarine;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 130px;
-    background-size: 800px;
-
-
+    let html = "";
+    users.forEach((item) => {html += item.getHtml();});
+    CONTAINER.innerHTML = html;
 }
-form
+
+Form.prototype.emailForm = function ()
 {
-    text-align: center;
-    align-content: center;
-    justify-content: center;
+    console.log('User: ');
+    console.log(this);
+};
 
-
-
-}
-div label{
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    font-family: "Comic Sans MS";
-    margin: 2px;
-
-
-}
-input
+Form.prototype.getHtml = function ()
 {
-    [type = text];
-    text-align: center;
-    justify-content: center;
-    background-color: azure;
-    border-style: none;
-    width: 20vw;
-    height: 2vw;
+    return `
+    <div id = "Mariam">
+    <p>${this.email}, </p> <p>${this.name},</p> <p>${this.surrname},</p>  <p>${this.password}</p>
+    </div>
+    `
+};
 
-}
-button {
-    margin-top: 10px;
-    font-size: 35px;
-    background-color: aquamarine ;
-    border-style: none;
-    font-family: "Comic Sans MS";
+//<input type="submit" className="validateBtn" value="validate">
+//let validateBtn = document.querySelector(".validateBTN");
+//if
+// SBMTBUTTON.addEventListener('submit', function ()
+// {
+//     console.log("SUBMITTED")
+//
+// });
+//
 
-}
-button:hover
-{
-    color: white;
-    cursor: pointer;
-}
