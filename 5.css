@@ -1,0 +1,66 @@
+h1
+{
+    color: black;
+    margin: 4vw;
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+body
+{
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 130px;
+    background-size: 800px;
+
+
+}
+
+.questions
+{
+    color: white;
+}
+form
+{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+
+
+
+}
+input
+{
+[type = text];
+    text-align: center;
+    justify-content: center;
+    background-color: azure;
+    border-style: none;
+    width: 20vw;
+    height: 2vw;
+
+}
+button {
+
+    color: black;
+    margin-top: 20px;
+    font-size: 35px;
+    background-color: beige;
+    border-style: none;
+    font-family: "Comic Sans MS";
+
+}
+button:hover
+{
+    color: aquamarine;
+    cursor: pointer;
+}
+
+
+
+.correct {
+    background-color: aquamarine;
+}
+.incorrect {
+    background-color: #310606;
+}
